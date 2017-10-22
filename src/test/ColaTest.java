@@ -6,11 +6,12 @@ import static org.junit.Assert.*;
 import org.apache.log4j.Logger;
 
 public class ColaTest{
-    //final static Logger log =  Logger.getLogger(ColaTest.class.getName());
+    final static Logger log =  Logger.getLogger(ColaTest.class.getName());
     ColaImpl<Integer> p;
 
     @Before
     public void crearCola(){
+        org.apache.log4j.BasicConfigurator.configure();
         this.p = new ColaImpl<Integer>(10);
         //log.info("Es crea la cola");
     }

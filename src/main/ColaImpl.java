@@ -1,15 +1,17 @@
+import org.apache.log4j.Logger;
 public class ColaImpl<T> implements Cola<T>{
 
     int i, leng;
     T[] data;
-    //final static Logger log = Logger.getLogger(ColaImpl.class);
+    final static Logger log = Logger.getLogger(ColaImpl.class);
 
     // Constructor
     public ColaImpl(int len) {
+        org.apache.log4j.BasicConfigurator.configure();
         data = (T[])new Object[len];
         i = 0;
         leng = len;
-        //log.info("Constructor con" + len + "objetos") ;
+        //log.info("Constructor con " + len + " objetos") ;
     }
 
     private boolean estaPlena()
