@@ -1,5 +1,4 @@
 # Cua
-<h1> Cua </h1>
 
 <h2>Integrantes del grupo:</h2>
 
