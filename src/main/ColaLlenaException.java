@@ -1,6 +1,6 @@
-public class ColalenaException extends Exception {
+public class ColaLlenaException extends Exception {
 
-    public ColalenaException() {
+    public ColaLlenaException() {
         super ("Cola Llena");
     }
 
