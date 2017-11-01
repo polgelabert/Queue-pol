@@ -14,7 +14,7 @@ public class ColaImpl<T> implements Cola<T>{
 
     // Constructor
     public ColaImpl(int len) {
-        org.apache.log4j.BasicConfigurator.configure();
+
         data = new LinkedList<T>();
         i = 0;
         leng = len;
