@@ -1,17 +1,23 @@
 import org.apache.log4j.Logger;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+
 public class ColaImpl<T> implements Cola<T>{
 
     int i, leng;
-    T[] data;
+    //T[] data;
+    Queue<T> data;
+
     final static Logger log = Logger.getLogger(ColaImpl.class);
 
     // Constructor
     public ColaImpl(int len) {
         org.apache.log4j.BasicConfigurator.configure();
-        data = (T[])new Object[len];
+        data = new LinkedList<T>();
         i = 0;
         leng = len;
-        //log.info("Constructor con " + len + " objetos") ;
     }
 
     private boolean estaPlena()
@@ -22,20 +28,27 @@ public class ColaImpl<T> implements Cola<T>{
 
     @Override
     public void push(T d) throws ColaLlenaException {
-        //log.info (d)
 
         if (estaPlena()) throw new ColaLlenaException();
-        data[i] = d; i++;
+        data.add(d);
+        i++;
     }
 
     @Override
     public T pop() throws ColaVaciaException {
-        if(i==0) throw new ColaVaciaException();
-        return data[0];
+
+        if(data.size() == 0) throw new ColaVaciaException();
+        i= i-1;
+        return data.poll();
     }
 
     @Override
     public int size() {
         return i;
+    }
+
+    @Override
+    public boolean contains(T d){
+        return data.contains(d);
     }
 }

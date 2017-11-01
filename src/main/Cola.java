@@ -6,4 +6,6 @@ public interface Cola<T> {
 
     public int size();
 
+    public boolean contains(T d);
+
 }
